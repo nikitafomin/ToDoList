@@ -22,6 +22,11 @@
 		19255A6318A3E2210092A2C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19255A4718A3E2210092A2C5 /* CoreData.framework */; };
 		19255A6B18A3E2210092A2C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19255A6918A3E2210092A2C5 /* InfoPlist.strings */; };
 		19255A6D18A3E2210092A2C5 /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19255A6C18A3E2210092A2C5 /* ToDoListTests.m */; };
+		19255A7E18A41EF40092A2C5 /* _Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 19255A7B18A41EF40092A2C5 /* _Folder.m */; };
+		19255A7F18A41EF40092A2C5 /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 19255A7D18A41EF40092A2C5 /* Folder.m */; };
+		1931B2EA18A427AF002550F0 /* _Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1931B2E918A427AF002550F0 /* _Item.m */; };
+		1931B2ED18A427CC002550F0 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1931B2EC18A427CC002550F0 /* Item.m */; };
+		19636ADE18A4E67E00B72614 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19636ADD18A4E67E00B72614 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,15 @@
 		19255A6818A3E2210092A2C5 /* ToDoListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToDoListTests-Info.plist"; sourceTree = "<group>"; };
 		19255A6A18A3E2210092A2C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		19255A6C18A3E2210092A2C5 /* ToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTests.m; sourceTree = "<group>"; };
+		19255A7A18A41EF40092A2C5 /* _Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Folder.h; sourceTree = "<group>"; };
+		19255A7B18A41EF40092A2C5 /* _Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Folder.m; sourceTree = "<group>"; };
+		19255A7C18A41EF40092A2C5 /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Folder.h; sourceTree = "<group>"; };
+		19255A7D18A41EF40092A2C5 /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Folder.m; sourceTree = "<group>"; };
+		1931B2E818A427AF002550F0 /* _Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Item.h; sourceTree = "<group>"; };
+		1931B2E918A427AF002550F0 /* _Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Item.m; sourceTree = "<group>"; };
+		1931B2EB18A427CC002550F0 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		1931B2EC18A427CC002550F0 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		19636ADD18A4E67E00B72614 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +131,10 @@
 			children = (
 				19255A5218A3E2210092A2C5 /* AppDelegate.h */,
 				19255A5318A3E2210092A2C5 /* AppDelegate.m */,
-				19255A5818A3E2210092A2C5 /* Images.xcassets */,
-				19255A5518A3E2210092A2C5 /* ToDoList.xcdatamodeld */,
+				19636ADD18A4E67E00B72614 /* Storyboard.storyboard */,
+				19636ADF18A4E72800B72614 /* Classes */,
+				19636ADC18A4E64100B72614 /* Assets */,
+				19255A7718A41EA10092A2C5 /* Core Data */,
 				19255A4A18A3E2210092A2C5 /* Supporting Files */,
 			);
 			path = ToDoList;
@@ -153,6 +169,61 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		19255A7718A41EA10092A2C5 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				19255A7918A41EF40092A2C5 /* Model */,
+				19255A5518A3E2210092A2C5 /* ToDoList.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		19255A7918A41EF40092A2C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19255A8118A41F250092A2C5 /* Maсhine */,
+				19255A8018A41F170092A2C5 /* User */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		19255A8018A41F170092A2C5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				19255A7C18A41EF40092A2C5 /* Folder.h */,
+				19255A7D18A41EF40092A2C5 /* Folder.m */,
+				1931B2EB18A427CC002550F0 /* Item.h */,
+				1931B2EC18A427CC002550F0 /* Item.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		19255A8118A41F250092A2C5 /* Maсhine */ = {
+			isa = PBXGroup;
+			children = (
+				19255A7A18A41EF40092A2C5 /* _Folder.h */,
+				19255A7B18A41EF40092A2C5 /* _Folder.m */,
+				1931B2E818A427AF002550F0 /* _Item.h */,
+				1931B2E918A427AF002550F0 /* _Item.m */,
+			);
+			name = "Maсhine";
+			sourceTree = "<group>";
+		};
+		19636ADC18A4E64100B72614 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				19255A5818A3E2210092A2C5 /* Images.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		19636ADF18A4E72800B72614 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +234,7 @@
 				19255A3A18A3E2210092A2C5 /* Sources */,
 				19255A3B18A3E2210092A2C5 /* Frameworks */,
 				19255A3C18A3E2210092A2C5 /* Resources */,
+				19255A7618A3FA540092A2C5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -230,6 +302,7 @@
 			files = (
 				19255A4E18A3E2210092A2C5 /* InfoPlist.strings in Resources */,
 				19255A5918A3E2210092A2C5 /* Images.xcassets in Resources */,
+				19636ADE18A4E67E00B72614 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,14 +316,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19255A7618A3FA540092A2C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/mogenerator -m ToDoList/ToDoList.xcdatamodeld -O ToDoList/Model --template-var arc=true";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		19255A3A18A3E2210092A2C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1931B2EA18A427AF002550F0 /* _Item.m in Sources */,
 				19255A5418A3E2210092A2C5 /* AppDelegate.m in Sources */,
 				19255A5718A3E2210092A2C5 /* ToDoList.xcdatamodeld in Sources */,
 				19255A5018A3E2210092A2C5 /* main.m in Sources */,
+				19255A7E18A41EF40092A2C5 /* _Folder.m in Sources */,
+				1931B2ED18A427CC002550F0 /* Item.m in Sources */,
+				19255A7F18A41EF40092A2C5 /* Folder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +544,7 @@
 				19255A7218A3E2210092A2C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19255A7318A3E2210092A2C5 /* Build configuration list for PBXNativeTarget "ToDoListTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +553,7 @@
 				19255A7518A3E2210092A2C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
