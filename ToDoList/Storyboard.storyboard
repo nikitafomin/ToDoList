@@ -4,30 +4,79 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - Root View Controller-->
+        <!--Items Table Controller - To do list-->
         <scene sceneID="jyq-ss-BYO">
             <objects>
-                <tableViewController id="NsU-yE-wdl" sceneMemberID="viewController">
+                <tableViewController id="NsU-yE-wdl" customClass="ItemsTableController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QBc-6X-zYt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="USI-uk-6aA">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" id="USI-uk-6aA" customClass="ItemCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="USI-uk-6aA" id="Pfp-UK-P8r">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="fa0-Yk-QJC"/>
+                    <navigationItem key="navigationItem" title="To do list" id="fa0-Yk-QJC">
+                        <barButtonItem key="leftBarButtonItem" title="new folder" id="7iZ-OM-uFp">
+                            <connections>
+                                <action selector="addFolderClick" destination="NsU-yE-wdl" id="4oe-dx-LJs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="new task" id="T1q-Dt-ocJ">
+                            <connections>
+                                <action selector="addItemClick" destination="NsU-yE-wdl" id="d0j-V9-MwV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8GH-9R-ppo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="541" y="-193"/>
+        </scene>
+        <!--View Controller - Info-->
+        <scene sceneID="6Gv-Qx-dnf">
+            <objects>
+                <viewController id="E2K-TJ-0Vt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CSt-bX-Jqz"/>
+                        <viewControllerLayoutGuide type="bottom" id="LjX-P9-h0M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MmG-4M-8tW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Info" id="Mrx-Hs-nSg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D05-4q-ck2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1259" y="519"/>
+        </scene>
+        <!--View Controller - New to do task-->
+        <scene sceneID="TBb-lM-k22">
+            <objects>
+                <viewController id="wxw-73-fr4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mkH-qR-m9y"/>
+                        <viewControllerLayoutGuide type="bottom" id="nFF-Gn-ID1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="988-c9-w0Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New to do task" id="sra-Tv-9gi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rek-38-x5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1259" y="-193"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RdM-5A-6iJ">
