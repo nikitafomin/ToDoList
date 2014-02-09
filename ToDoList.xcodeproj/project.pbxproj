@@ -24,6 +24,9 @@
 		19255A6D18A3E2210092A2C5 /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19255A6C18A3E2210092A2C5 /* ToDoListTests.m */; };
 		19255A7E18A41EF40092A2C5 /* _Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 19255A7B18A41EF40092A2C5 /* _Folder.m */; };
 		19255A7F18A41EF40092A2C5 /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 19255A7D18A41EF40092A2C5 /* Folder.m */; };
+		1930EA4818A797E500A646E3 /* TaskCreateOrEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1930EA4718A797E500A646E3 /* TaskCreateOrEditViewController.m */; };
+		1930EA4B18A79B0A00A646E3 /* FolderSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1930EA4A18A79B0A00A646E3 /* FolderSelectTableViewController.m */; };
+		1930EA4E18A7C09100A646E3 /* FolderSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1930EA4D18A7C09100A646E3 /* FolderSelectCell.m */; };
 		1931B2EA18A427AF002550F0 /* _Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1931B2E918A427AF002550F0 /* _Item.m */; };
 		1931B2ED18A427CC002550F0 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1931B2EC18A427CC002550F0 /* Item.m */; };
 		1951F68B18A67BCF008C46EE /* ItemsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1951F68A18A67BCF008C46EE /* ItemsTableController.m */; };
@@ -90,6 +93,12 @@
 		19255A7B18A41EF40092A2C5 /* _Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Folder.m; sourceTree = "<group>"; };
 		19255A7C18A41EF40092A2C5 /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Folder.h; sourceTree = "<group>"; };
 		19255A7D18A41EF40092A2C5 /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Folder.m; sourceTree = "<group>"; };
+		1930EA4618A797E500A646E3 /* TaskCreateOrEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCreateOrEditViewController.h; sourceTree = "<group>"; };
+		1930EA4718A797E500A646E3 /* TaskCreateOrEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCreateOrEditViewController.m; sourceTree = "<group>"; };
+		1930EA4918A79B0A00A646E3 /* FolderSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderSelectTableViewController.h; sourceTree = "<group>"; };
+		1930EA4A18A79B0A00A646E3 /* FolderSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderSelectTableViewController.m; sourceTree = "<group>"; };
+		1930EA4C18A7C09100A646E3 /* FolderSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderSelectCell.h; sourceTree = "<group>"; };
+		1930EA4D18A7C09100A646E3 /* FolderSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderSelectCell.m; sourceTree = "<group>"; };
 		1931B2E818A427AF002550F0 /* _Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Item.h; sourceTree = "<group>"; };
 		1931B2E918A427AF002550F0 /* _Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Item.m; sourceTree = "<group>"; };
 		1931B2EB18A427CC002550F0 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
@@ -312,6 +321,12 @@
 				1951F68A18A67BCF008C46EE /* ItemsTableController.m */,
 				1951F68C18A687C0008C46EE /* ItemCell.h */,
 				1951F68D18A687C0008C46EE /* ItemCell.m */,
+				1930EA4618A797E500A646E3 /* TaskCreateOrEditViewController.h */,
+				1930EA4718A797E500A646E3 /* TaskCreateOrEditViewController.m */,
+				1930EA4918A79B0A00A646E3 /* FolderSelectTableViewController.h */,
+				1930EA4A18A79B0A00A646E3 /* FolderSelectTableViewController.m */,
+				1930EA4C18A7C09100A646E3 /* FolderSelectCell.h */,
+				1930EA4D18A7C09100A646E3 /* FolderSelectCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -543,6 +558,7 @@
 				19636CF918A4FDB000B72614 /* MagicalRecord+Actions.m in Sources */,
 				19636CFC18A4FDB000B72614 /* MagicalRecord+Options.m in Sources */,
 				19636CF718A4FDB000B72614 /* NSPersistentStore+MagicalRecord.m in Sources */,
+				1930EA4818A797E500A646E3 /* TaskCreateOrEditViewController.m in Sources */,
 				19255A5418A3E2210092A2C5 /* AppDelegate.m in Sources */,
 				19636CFB18A4FDB000B72614 /* MagicalRecord+iCloud.m in Sources */,
 				19636CE818A4FDB000B72614 /* NSEntityDescription+MagicalDataImport.m in Sources */,
@@ -562,6 +578,8 @@
 				19636CEE18A4FDB000B72614 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				19636CF318A4FDB000B72614 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				19636CED18A4FDB000B72614 /* NSManagedObject+MagicalAggregation.m in Sources */,
+				1930EA4B18A79B0A00A646E3 /* FolderSelectTableViewController.m in Sources */,
+				1930EA4E18A7C09100A646E3 /* FolderSelectCell.m in Sources */,
 				19636CFE18A4FDB000B72614 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				1951F68B18A67BCF008C46EE /* ItemsTableController.m in Sources */,
 				19636CF118A4FDB000B72614 /* NSManagedObject+MagicalRequests.m in Sources */,

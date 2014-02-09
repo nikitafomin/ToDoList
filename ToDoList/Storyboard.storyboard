@@ -20,6 +20,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="wxw-73-fr4" kind="push" identifier="ToTaskEdit" id="T1Y-LI-Vww"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -31,7 +34,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="new task" id="T1q-Dt-ocJ">
                             <connections>
-                                <action selector="addItemClick" destination="NsU-yE-wdl" id="d0j-V9-MwV"/>
+                                <segue destination="wxw-73-fr4" kind="push" identifier="ToTaskCreate" id="JmA-bB-G4X"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -59,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="1259" y="519"/>
         </scene>
-        <!--View Controller - New to do task-->
+        <!--Task Create Or Edit View Controller - New to do task-->
         <scene sceneID="TBb-lM-k22">
             <objects>
-                <viewController id="wxw-73-fr4" sceneMemberID="viewController">
+                <viewController id="wxw-73-fr4" customClass="TaskCreateOrEditViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mkH-qR-m9y"/>
                         <viewControllerLayoutGuide type="bottom" id="nFF-Gn-ID1"/>
@@ -70,13 +73,94 @@
                     <view key="view" contentMode="scaleToFill" id="988-c9-w0Z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0q-AM-0TS">
+                                <rect key="frame" x="20" y="82" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qz-nx-lj4">
+                                <rect key="frame" x="20" y="120" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task folder:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dS-A6-8by">
+                                <rect key="frame" x="20" y="158" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7S-K0-Su2">
+                                <rect key="frame" x="20" y="187" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select folder">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Bd4-NP-uV3" kind="push" identifier="ToFolderSelect" id="2Nl-jb-D7a"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New to do task" id="sra-Tv-9gi"/>
+                    <navigationItem key="navigationItem" title="New to do task" id="sra-Tv-9gi">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="xB9-4l-rHf">
+                            <connections>
+                                <action selector="cancelClick" destination="wxw-73-fr4" id="tvh-Qm-c9K"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="TtD-dd-Tdk">
+                            <connections>
+                                <action selector="doneClick" destination="wxw-73-fr4" id="CY9-bX-Y37"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="folderSelectButton" destination="p7S-K0-Su2" id="o2D-Ce-vX2"/>
+                        <outlet property="itemNameTextField" destination="8qz-nx-lj4" id="ttX-ck-yLB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rek-38-x5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1259" y="-193"/>
+        </scene>
+        <!--Folder Select Table View Controller - Select folder-->
+        <scene sceneID="Pye-eQ-DN4">
+            <objects>
+                <tableViewController id="Bd4-NP-uV3" customClass="FolderSelectTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p3i-sf-QFO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FolderSelectCell" id="PT0-xn-5Et" customClass="FolderSelectCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PT0-xn-5Et" id="h9P-nQ-ilO">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Bd4-NP-uV3" id="l0V-vt-QzK"/>
+                            <outlet property="delegate" destination="Bd4-NP-uV3" id="BbC-nM-5UK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select folder" id="xhm-ao-rLx">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="uP0-j6-PqN">
+                            <connections>
+                                <action selector="cancelClick" destination="Bd4-NP-uV3" id="wIz-IU-VPn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDa-lq-Pb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="-193"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RdM-5A-6iJ">
@@ -99,4 +183,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="JmA-bB-G4X"/>
+    </inferredMetricsTieBreakers>
 </document>

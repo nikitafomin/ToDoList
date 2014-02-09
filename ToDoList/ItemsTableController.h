@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskCreateOrEditViewController.h"
 #import "ItemCell.h"
 
-@interface ItemsTableController : UITableViewController <UIAlertViewDelegate>
+@interface ItemsTableController : UITableViewController <UIAlertViewDelegate, TaskCreateOrEditViewControllerDelegate>
 
 - (IBAction)addFolderClick;
-- (IBAction)addItemClick;
 
 @end

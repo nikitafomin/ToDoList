@@ -12,7 +12,6 @@
 {
     NSArray *_folders;
     
-    UIAlertView *_newItemAlert;
     UIAlertView *_newFolderAlert;
 }
 
@@ -112,17 +111,22 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ToTaskCreate"]) {
+        TaskCreateOrEditViewController *controller = [segue destinationViewController];
+        [controller setDelegate:self];
+    } else if ([segue.identifier isEqualToString:@"ToTaskEdit"]) {
+        TaskCreateOrEditViewController *controller = [segue destinationViewController];
+        [controller setDelegate:self];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        Folder *folder = [_folders objectAtIndex:indexPath.section];
+        Item *item = [[[folder items] allObjects] objectAtIndex:indexPath.row];
+        [controller setItem:item];
+    }
 }
-
- */
 
 #pragma mark - Actions
 
@@ -135,15 +139,6 @@
     [_newFolderAlert show];
 }
 
-- (void)addItemClick
-{
-    NSLog(@"\n\nAdd item\n\n");
-    
-    _newItemAlert = [[UIAlertView alloc] initWithTitle:@"new task" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
-    [_newItemAlert setAlertViewStyle:UIAlertViewStylePlainTextInput];
-    [_newItemAlert show];
-}
-
 #pragma mark - Alert view delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -153,20 +148,32 @@
             Folder *newFolder = [Folder MR_createEntity];
             [newFolder setName:[[alertView textFieldAtIndex:0] text]];
             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+            _folders = [Folder MR_findAllSortedBy:@"order" ascending:YES];
             [self.tableView reloadData];
         }
         _newFolderAlert = nil;
-    } else if (alertView == _newItemAlert) {
-        if (buttonIndex == 1) {
-            Item *newFolder = [Item MR_createEntity];
-            Folder *folder = [Folder MR_findFirst];
-            [newFolder setFolder:folder];
-            [newFolder setName:[[alertView textFieldAtIndex:0] text]];
-            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-            [self.tableView reloadData];
-        }
-        _newItemAlert = nil;
     }
+}
+
+#pragma mark - Task create or edit conrtoller delegate
+
+- (void)taskCreateOrEditViewControllerDidCancel:(TaskCreateOrEditViewController *)controller
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)taskCreateOrEditViewController:(TaskCreateOrEditViewController *)controller didCreateItem:(Item *)item
+{
+    _folders = [Folder MR_findAllSortedBy:@"order" ascending:YES];
+    [self.tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)taskCreateOrEditViewController:(TaskCreateOrEditViewController *)controller didChangeItem:(Item *)item
+{
+    _folders = [Folder MR_findAllSortedBy:@"order" ascending:YES];
+    [self.tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
